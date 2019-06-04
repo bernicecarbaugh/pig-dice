@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">  
+    <link href="css/styles.css" rel="stylesheet" type="text/css">  
+    <title>Pig Dice</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h2>Pig Dice</h2>
+        <h4>Simple two-player game. First person to hit or exceed the goal wins.</h4>
+      </div>
+
+      <div class="panel panel-warning">
+        <div class="panel-heading">
+          Game Rules
+        </div>
+        <div class="panel-body">
+          <p>This is a two-person game. Each player take turns until a player gets enough points to hit or exceed the goal.</p>
+          <p>Players take turn rolling a dice until either a 1 is rolled or the player decides to hold:</p>
+          <ol>
+            <li>If player rolls a 1, they score nothing and it becomes the next person's turn.</li> 
+            <li>If player rolls any other number, it is added to their turn total and that player's turn continues.</li> 
+            <li>If the player chooses to hold, their turn total is added to their score, and it becomes the next player's turn.</li>
+          </ol>
+        </div>
+      </div><!-- end game rules-->
+      
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          Set Up
+        </div>
+        <div class="panel-body">       
+          <form id="form-setup">
+            <label for="goal" class="control-label">What number of points do you want to play to?</label>
+            <input id="goal" class="form-control" type="number" value="25">
+            <label for="player1" class="control-label">Player 1 Name:</label>
+            <input id="player1" class="form-control" type="text">
+            <label for="player2" class="control-label">Player 2 Name:</label>
+            <input id="player2" class="form-control" type="text">
+            <br><p><button type="submit">Let's Play</button></p>
+          </form>
+        </div>
+      </div><!-- end set up -->
+
+      <div class="panel panel-success" id="div-gameplay">
+        <div class="panel-heading">
+          Game Play
+        </div>
+        <div class="panel-body">
+          <p><span id="player1-name">Player 1</span>:  
+          <span id="player1-score">Score 1</span></p>
+          <p><span id="player2-name">Player 2</span>:  
+          <span id="player2-score">Score 2</span></p>
+        </div>
+        <div class="well" id="div-turn">
+          <p><span id="current-player">Player 1
+          </span>, you're up! What do you want to do?</p>
+          <p>Your turn total: <span id="current-turn-total">Turn total</span>
+          <form id="form-gameplay">
+            <input id="button-roll" type="submit" value="Roll">
+            <input id="button-hold" type="submit" value="Hold">
+          </form>
+        </div>
+        <div class="well" id="div-gameover">
+          <p><span id="winner">Winning Player
+          </span> is the winner!</p>
+        </div>
+        </div><!-- end game play -->
+
+    </div><!-- end container div-->
+  </body>
+</html>
